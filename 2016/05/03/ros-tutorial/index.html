@@ -17,7 +17,7 @@
 <meta property="og:image" content="http://yoursite.com/2016/05/03/ros-tutorial/listener.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/03/ros-tutorial/servier.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/03/ros-tutorial/client.png">
-<meta property="og:updated_time" content="2016-05-12T04:16:20.662Z">
+<meta property="og:updated_time" content="2016-05-13T04:45:47.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ros_tutorial">
 <meta name="twitter:description" content="&amp;#x524D;&amp;#x8A00;&amp;#x8FD9;&amp;#x7BC7;&amp;#x6587;&amp;#x7AE0;&amp;#x5728;&amp;#x4E8E;&amp;#x8BB0;&amp;#x5F55;&amp;#x6211;&amp;#x5B66;&amp;#x4E60;ros&amp;#x521D;&amp;#x7EA7;&amp;#x6559;&amp;#x7A0B;&amp;#xFF0C;&amp;#x7B97;&amp;#x662F;&amp;#x4E2A;&amp;#x4EBA;&amp;#x7684;&amp;#x4E00;&amp;#x4E">
@@ -165,11 +165,15 @@
 <h3 id="&#x7F16;&#x5199;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5668;&#x4EE5;&#x53CA;&#x8BA2;&#x9605;&#x5668;&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;"><a href="#&#x7F16;&#x5199;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5668;&#x4EE5;&#x53CA;&#x8BA2;&#x9605;&#x5668;&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;" class="headerlink" title="&#x7F16;&#x5199;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5668;&#x4EE5;&#x53CA;&#x8BA2;&#x9605;&#x5668;&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;"></a>&#x7F16;&#x5199;&#x6D88;&#x606F;&#x53D1;&#x5E03;&#x5668;&#x4EE5;&#x53CA;&#x8BA2;&#x9605;&#x5668;&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;</h3><p>&#x5728;src&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#xFF0C;&#x65B0;&#x5EFA;&#x53D1;&#x5E03;&#x5668;<a href="https://raw.github.com/ros/ros_tutorials/groovy-devel/roscpp_tutorials/talker/talker.cpp" target="_blank" rel="external">talker</a>&#x4EE5;&#x53CA;&#x8BA2;&#x9605;&#x5668;<a href="https://raw.github.com/ros/ros_tutorials/groovy-devel/roscpp_tutorials/listener/listener.cpp" target="_blank" rel="external">listener</a> &#x5E76;&#x4E14;&#x76F8;&#x5E94;&#x7684;&#x4FEE;&#x6539;<a href="https://raw.github.com/ros/catkin_tutorials/master/create_package_pubsub/catkin_ws/src/beginner_tutorials/CMakeLists.txt" target="_blank" rel="external">CMakelists.txt</a> &#xFF08;&#x70B9;&#x51FB;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6E90;&#x4EE3;&#x7801;&#xFF09;<br>&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6548;&#x679C;&#xFF1A;<br><img src="/2016/05/03/ros-tutorial/talker.png" alt="talker"><br><img src="/2016/05/03/ros-tutorial/listener.png" alt="listener"> </p>
 <h3 id="&#x7F16;&#x5199;service&#x548C;client&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;"><a href="#&#x7F16;&#x5199;service&#x548C;client&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;" class="headerlink" title="&#x7F16;&#x5199;service&#x548C;client&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;"></a>&#x7F16;&#x5199;service&#x548C;client&#xFF08;&#x4F7F;&#x7528;&#x5B98;&#x7F51;&#x4E0A;&#x7684;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF09;</h3><p>&#x5728;src&#x4E2D;&#x6DFB;&#x52A0;add_two_ints_server.cpp&#x548C;add_two_ints_client.cpp&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x5B98;&#x7F51;&#x67E5;&#x770B;<a href="http://wiki.ros.org/cn/ROS/Tutorials/WritingServiceClient%28c%2B%2B%29" target="_blank" rel="external">&#x6E90;&#x4EE3;&#x7801;</a><br>&#x7F16;&#x8BD1;&#x8FD0;&#x884C;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#xFF1A;<br><img src="/2016/05/03/ros-tutorial/servier.png" alt="service"><br><img src="/2016/05/03/ros-tutorial/client.png" alt="client"></p>
 <h2 id="&#x81F3;&#x6B64;"><a href="#&#x81F3;&#x6B64;" class="headerlink" title="&#x81F3;&#x6B64;"></a>&#x81F3;&#x6B64;</h2><p>&#x81F3;&#x6B64;&#xFF0C;&#x5BF9;&#x4E8E;ROS&#x5F53;&#x4E2D;&#x4E00;&#x4E9B;&#x975E;&#x5E38;&#x57FA;&#x672C;&#x7684;&#x6982;&#x5FF5;&#x4EE5;&#x53CA;&#x5173;&#x7CFB;&#x5DF2;&#x7ECF;&#x4E86;&#x89E3;&#x4E86;&#x3002;&#x4E4B;&#x540E;&#x8FD8;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x6211;&#x5728;Start Guide&#x8FD9;&#x7BC7;blog&#x4E2D;&#x63D0;&#x5230;&#x7684;&#x9014;&#x5F84;&#x8FDB;&#x884C;&#x8FDB;&#x4E00;&#x6B65;&#x7684;&#x5B66;&#x4E60;&#x3002;</p>
+<h1 id="&#x5173;&#x4E8E;&#x4E00;&#x53EA;&#x9F9F;&#x7684;&#x6545;&#x4E8B;"><a href="#&#x5173;&#x4E8E;&#x4E00;&#x53EA;&#x9F9F;&#x7684;&#x6545;&#x4E8B;" class="headerlink" title="&#x5173;&#x4E8E;&#x4E00;&#x53EA;&#x9F9F;&#x7684;&#x6545;&#x4E8B;"></a>&#x5173;&#x4E8E;&#x4E00;&#x53EA;&#x9F9F;&#x7684;&#x6545;&#x4E8B;</h1><p>&#x5728;tutorial&#x4E2D;&#x6709;&#x4E00;&#x53EA;&#x5173;&#x4E8E;&#x9F9F;&#x7684;&#x6A21;&#x62DF;&#x3002;</p>
+<ul>
+<li>&#x5F00;&#x542F;</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/03/ros-tutorial/" data-id="cio3s9ap700005tn3l1q0dhy6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/03/ros-tutorial/" data-id="ciofbsuqg000jqwn3x7igzl87" class="article-share-link">Share</a>
       
       
     </footer>
@@ -178,11 +182,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/07/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/10/python-handle-data/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          你好，Hexo！
+          python对数据的预处理
         
       </div>
     </a>
@@ -206,7 +210,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DataMining/">DataMining</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ROS/">ROS</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DataMining/">DataMining</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ROS/">ROS</a></li></ul>
     </div>
   </div>
 
@@ -216,7 +220,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Installation/">Installation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Installation/">Installation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
     </div>
   </div>
 
@@ -226,7 +230,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Installation/" style="font-size: 10px;">Installation</a> <a href="/tags/python/" style="font-size: 10px;">python</a>
+      <a href="/tags/Installation/" style="font-size: 10px;">Installation</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
     </div>
   </div>
 
@@ -248,19 +252,23 @@
       <ul>
         
           <li>
+            <a href="/2016/05/18/hello-world/">你好，Hexo！</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/14/python-tips/">python--小tips</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/13/ROS-by-example/">ROS_by_example</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/10/python-handle-data/">python对数据的预处理</a>
           </li>
         
           <li>
-            <a href="/2016/05/07/hello-world/">你好，Hexo！</a>
-          </li>
-        
-          <li>
             <a href="/2016/05/03/ros-tutorial/">ros_tutorial</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/03/ROS-install-indigo/">ROS：install indigo</a>
           </li>
         
       </ul>

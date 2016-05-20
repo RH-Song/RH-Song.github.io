@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>ROS_by_example | RiHui-Song&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x7406;&amp;#x89E3;
+ROS&amp;#x4E0B;&amp;#x7684;&amp;#x5355;&amp;#x4F4D;&amp;#x548C;&amp;#x5750;&amp;#x6807;&amp;#x76F4;&amp;#x89D2;&amp;#x5750;&amp;#x6807;&amp;#x65CB;&amp;#x8F6C;&amp;#x5355;&amp;#x4F4D;&amp;#xFF1A;&amp;#x7EBF;&amp;#x901F;&amp;#x5EA6;(m/s) &amp;#x89D">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ROS_by_example">
+<meta property="og:url" content="http://yoursite.com/2016/05/13/ROS-by-example/index.html">
+<meta property="og:site_name" content="RiHui-Song's Blog">
+<meta property="og:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x7406;&amp;#x89E3;
+ROS&amp;#x4E0B;&amp;#x7684;&amp;#x5355;&amp;#x4F4D;&amp;#x548C;&amp;#x5750;&amp;#x6807;&amp;#x76F4;&amp;#x89D2;&amp;#x5750;&amp;#x6807;&amp;#x65CB;&amp;#x8F6C;&amp;#x5355;&amp;#x4F4D;&amp;#xFF1A;&amp;#x7EBF;&amp;#x901F;&amp;#x5EA6;(m/s) &amp;#x89D">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/coordin.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/rotation.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/arci.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/files.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/goal.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/ar_roboct.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/sim_rviz.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/ar_roboct_true.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/13/ROS-by-example/trunaround_ar_rob.png">
+<meta property="og:updated_time" content="2016-05-20T06:08:50.802Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ROS_by_example">
+<meta name="twitter:description" content="&amp;#x6982;&amp;#x5FF5;&amp;#x7406;&amp;#x89E3;
+ROS&amp;#x4E0B;&amp;#x7684;&amp;#x5355;&amp;#x4F4D;&amp;#x548C;&amp;#x5750;&amp;#x6807;&amp;#x76F4;&amp;#x89D2;&amp;#x5750;&amp;#x6807;&amp;#x65CB;&amp;#x8F6C;&amp;#x5355;&amp;#x4F4D;&amp;#xFF1A;&amp;#x7EBF;&amp;#x901F;&amp;#x5EA6;(m/s) &amp;#x89D">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/13/ROS-by-example/coordin.png">
+  
+    <link rel="alternate" href="/atom.xml" title="RiHui-Song&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">RiHui-Song&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/categories/Hexo">Hexo</a>
+        
+          <a class="main-nav-link" href="/categories/ROS">ROS</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ROS-by-example" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/13/ROS-by-example/" class="article-date">
+  <time datetime="2016-05-13T04:27:24.000Z" itemprop="datePublished">2016-05-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ROS/">ROS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ROS_by_example
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="&#x6982;&#x5FF5;&#x7406;&#x89E3;"><a href="#&#x6982;&#x5FF5;&#x7406;&#x89E3;" class="headerlink" title="&#x6982;&#x5FF5;&#x7406;&#x89E3;"></a>&#x6982;&#x5FF5;&#x7406;&#x89E3;</h1><ul>
+<li><p>ROS&#x4E0B;&#x7684;&#x5355;&#x4F4D;&#x548C;&#x5750;&#x6807;<br>&#x76F4;&#x89D2;&#x5750;&#x6807;<br><img src="/2016/05/13/ROS-by-example/coordin.png" alt="&#x76F4;&#x89D2;&#x5750;&#x6807;"><br>&#x65CB;&#x8F6C;<br><img src="/2016/05/13/ROS-by-example/rotation.png" alt="&#x65CB;&#x8F6C;"><br>&#x5355;&#x4F4D;&#xFF1A;&#x7EBF;&#x901F;&#x5EA6;(m/s) &#x89D2;&#x901F;&#x5EA6;(rad/s) &#x5BA4;&#x5185;&#x4E00;&#x822C;&#x4E0D;&#x8D85;&#x8FC7;0.2m/s</p>
+</li>
+<li><p>odometry<br>&#x9700;&#x8981;&#x8BB0;&#x4F4F;&#xFF0C;&#x65E0;&#x8BBA;&#x4F7F;&#x7528;&#x4E86;&#x591A;&#x5C11;&#x4E2A;source&#xFF0C;odometry&#x90FD;&#x4F1A;&#x4E0E;&#x771F;&#x5B9E;&#x7684;&#x503C;&#x6709;&#x5DEE;&#x8DDD;&#x3002;</p>
+</li>
+<li><p>base controller<br>&#x5305;&#x62EC;driver&#x548C;PID&#x63A7;&#x5236;&#x5668;&#x3002;&#x53D1;&#x5E03;&#x901A;&#x8FC7;/odom frame &#x5230; base frame&#x3002;&#x67D0;&#x4E9B;&#x673A;&#x5668;&#x4EBA;&#x4F1A;&#x4F7F;&#x7528;robot_pose_ekf&#x5305;&#x5BF9;&#x673A;&#x5668;&#x4EBA;&#x8FDB;&#x884C;&#x66F4;&#x52A0;&#x7CBE;&#x786E;&#x7684;&#x63A7;&#x5236;&#x3002;<br>&#x6709;&#x4E86;base controller&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;ROS&#x63D0;&#x4F9B;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#x4EE5;&#x53CA;&#x4F7F;&#x7528;ROS&#x7684;&#x8282;&#x70B9;&#x53D1;&#x5E03;&#x6D88;&#x606F;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5728;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#x5C42;&#x7EA7;&#x5BF9;&#x5BF9;&#x673A;&#x5668;&#x4EBA;&#x8FDB;&#x884C;&#x63A7;&#x5236;&#x3002;&#x6211;&#x4EEC;&#x4E0D;&#x518D;&#x5173;&#x5FC3;&#x8FD9;&#x4E2A;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x786C;&#x4EF6;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x5355;&#x7EAF;&#x7684;&#x5173;&#x6CE8;&#x673A;&#x5668;&#x4EBA;&#x5728;&#x73B0;&#x5B9E;&#x4E2D;&#x7684;&#x7EBF;&#x901F;&#x5EA6;&#x548C;&#x89D2;&#x901F;&#x5EA6;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x63A7;ROS&#x7684;&#x63A5;&#x53E3;&#x5373;&#x53EF;&#x3002;</p>
+</li>
+<li><p>SLAM package<br>&#x8DDF;base controller&#x7C7B;&#x4F3C;&#xFF0C;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x4E00;&#x4E2A;&#x8F83;&#x9AD8;&#x7684;&#x5C42;&#x7EA7;&#x63A7;&#x5236;&#x673A;&#x5668;&#x4EBA;&#x8FDB;&#x884C;&#x5EFA;&#x56FE;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x5728;ROS&#x73AF;&#x5883;&#x4E2D;&#x6DFB;&#x52A0;gmapping package&#xFF0C;&#x8FD9;&#x4E2A;&#x5305;&#x6700;&#x597D;&#x5339;&#x914D;&#x4F7F;&#x7528;&#x6FC0;&#x5149;&#x96F7;&#x8FBE;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;kinetic&#x548C;Asus Xtion depth camera&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;amcl package&#xFF08;Adaptive Monte Carlo Localization&#xFF09;&#x4F7F;&#x5F97;&#x673A;&#x5668;&#x4EBA;&#x80FD;&#x591F;&#x6839;&#x636E;&#x5F53;&#x524D;&#x7684;&#x5730;&#x56FE;&#x4FE1;&#x606F;&#xFF08;current scan&#xFF09;&#x548C;&#x6D4B;&#x91CF;&#x6570;&#x636E;&#xFF08;odometry data&#xFF09;&#x81EA;&#x52A8;&#x5B9A;&#x4F4D;&#xFF0C;&#x5728;&#x5730;&#x56FE;&#x4E0A;&#x70B9;&#x51FB;&#x4E00;&#x4E2A;&#x4F4D;&#x7F6E;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x4F1A;&#x81EA;&#x52A8;&#x5BFB;&#x8DEF;&#x8FC7;&#x53BB;&#x5E76;&#x81EA;&#x52A8;&#x907F;&#x969C;&#x3002;</p>
+</li>
+<li><p>&#x67B6;&#x6784;<br><img src="/2016/05/13/ROS-by-example/arci.png" alt="motion control hierachy"></p>
+</li>
+</ul>
+<h1 id="&#x539F;&#x7406;&#x7406;&#x89E3;"><a href="#&#x539F;&#x7406;&#x7406;&#x89E3;" class="headerlink" title="&#x539F;&#x7406;&#x7406;&#x89E3;"></a>&#x539F;&#x7406;&#x7406;&#x89E3;</h1><h1 id="&#x5E38;&#x7528;&#x64CD;&#x4F5C;"><a href="#&#x5E38;&#x7528;&#x64CD;&#x4F5C;" class="headerlink" title="&#x5E38;&#x7528;&#x64CD;&#x4F5C;"></a>&#x5E38;&#x7528;&#x64CD;&#x4F5C;</h1><ul>
+<li><p>prepare environment</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ros-indigo-turtlebot-bringup \ros-indigo-turtlebot-create-desktop ros-indigo-openni-* \ros-indigo-openni2-* ros-indigo-freenect-* ros-indigo-usb-cam \ros-indigo-laser-* ros-indigo-hokuyo-node \ros-indigo-audio-common gstreamer0.10-pocketsphinx \ros-indigo-pocketsphinx ros-indigo-slam-gmapping \ros-indigo-joystick-drivers python-rosinstall \ros-indigo-orocos-kdl ros-indigo-python-orocos-kdl \python-setuptools ros-indigo-dynamixel-motor-* \libopencv-dev python-opencv ros-indigo-vision-opencv \ros-indigo-depthimage-to-laserscan ros-indigo-arbotix-* \ros-indigo-turtlebot-teleop ros-indigo-move-base \ros-indigo-map-server ros-indigo-fake-localization \ros-indigo-amcl git subversion mercurial</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/pirobot/rbx1.git<span class="variable">$cd</span> rbx1<span class="variable">$git</span> checkout indigo-devel</span><br><span class="line"><span class="built_in">cd</span> ~/catkin_ws</span><br><span class="line">catkin_make</span><br><span class="line"><span class="built_in">source</span> ~/catkin_ws/devel/setup.bash</span><br><span class="line">rospack profile</span><br><span class="line">udo apt-get install ros-indigo-arbotix-*</span><br><span class="line">sudo apt-get install ros-indigo-laser-* ros-indigo-hokuyo-node</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Packages<br><img src="/2016/05/13/ROS-by-example/files.png" alt="packages in rbx"></p>
+</li>
+<li><p>Goal<br><img src="/2016/05/13/ROS-by-example/goal.png" alt="Goal"></p>
+</li>
+<li><p>First example: helloWorldNavigation_movebase</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup fake_turtlebot.launch</span><br><span class="line">roslaunch rbx1_nav fake_move_base_blank_map.launch</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/nav.rviz</span><br><span class="line">rostopic pub /move_base_simple/goal geometry_msgs/PoseStamped \<span class="string">&apos;{ header: { frame_id: &quot;map&quot;  }, pose: { position: { x: 1.0, y: 0, z: 0  }, orientation: { x: 0, y: 0, z: 0, w: 1  }  }  }&apos;</span></span><br><span class="line">rosstopic pub /move_base_simple/goal geometry_msgs/PoseStamped \<span class="string">&apos;{ header: { frame_id: &quot;map&quot;  }, pose: { position: { x: 0, y: 0, z: 0  }, orientation: { x: 0, y: 0, z: 0, w: 1  }  }  }&apos;</span><span class="string">&apos;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Point And Click:&#x4F7F;&#x7528;&#x9F20;&#x6807;&#x70B9;&#x51FB;&#x5DE6;&#x4E0B;&#x89D2;&#x7684;reset&#x6309;&#x94AE;&#x53EF;&#x4EE5;&#x6E05;&#x9664;&#x4E4B;&#x524D;&#x7684;&#x8F68;&#x8FF9;&#xFF0C;&#x518D;&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x65B9;&#x7684;2D Nav Goal&#x6309;&#x94AE;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x9F20;&#x6807;&#x518D;&#x5730;&#x56FE;&#x4E0A;&#x6307;&#x5B9A;&#x76EE;&#x6807;&#x3002;</p>
+<iframe height="498" width="510" src="http://player.youku.com/embed/XMTU3Njk1Nzc0OA==" frameborder="0" allowfullscreen></iframe>
+
+<ul>
+<li><p>Second example: helloWorldNavigation_AvoidingObstacles</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup fake_turtlebot.launch</span><br><span class="line">rosparam delete /move_base</span><br><span class="line">roslaunch rbx1_nav fake_move_base_map_with_obstacles.launch</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/nav_obstacles.rviz</span><br><span class="line">rosrun rbx1_nav move_base_square.py</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Third example: helloWorldGmapping</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup turtlebot_minimal_create.launch</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/fake_laser.rviz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Fourth example: helloWorldGmapping_record&amp;create</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup turtlebot_minimal_create.launch</span><br><span class="line">roslaunch rbx1_nav gmapping_demo.launch</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/gmapping.rviz</span><br><span class="line">roslaunch rbx1_nav keyboard_teleop.launch</span><br><span class="line">roscd rbx1_nav/bag_files</span><br><span class="line">rosbag record -O my_scan_data /scan /tf</span><br><span class="line">rosrun map_server map_saver <span class="_">-f</span> my_map</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&#x5907;&#x6CE8;&#xFF1A;&#x5BF9;&#x4E8E;&#x5927;&#x91CF;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F7F;&#x7528;use_sim_time&#x63A7;&#x5236;<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rosparam <span class="built_in">set</span> use_sim_time <span class="literal">true</span></span><br><span class="line">rosparam <span class="built_in">set</span> use_sim_time <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>Fifth example: helloWorldAmcl<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup fake_turtlebot.launch</span><br><span class="line">roslaunch rbx1_nav fake_amcl.launch map:=<span class="built_in">test</span>_map.yaml</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/amcl.rviz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="&#x95EE;&#x9898;&#x89E3;&#x51B3;"><a href="#&#x95EE;&#x9898;&#x89E3;&#x51B3;" class="headerlink" title="&#x95EE;&#x9898;&#x89E3;&#x51B3;"></a>&#x95EE;&#x9898;&#x89E3;&#x51B3;</h1><h2 id="&#x5728;&#x65B0;&#x7EC8;&#x7AEF;&#x4E0B;&#x6CA1;&#x6709;&#x8FDB;&#x884C;source"><a href="#&#x5728;&#x65B0;&#x7EC8;&#x7AEF;&#x4E0B;&#x6CA1;&#x6709;&#x8FDB;&#x884C;source" class="headerlink" title="&#x5728;&#x65B0;&#x7EC8;&#x7AEF;&#x4E0B;&#x6CA1;&#x6709;&#x8FDB;&#x884C;source"></a>&#x5728;&#x65B0;&#x7EC8;&#x7AEF;&#x4E0B;&#x6CA1;&#x6709;&#x8FDB;&#x884C;source</h2><ul>
+<li>Testing the Simulator&#x51FA;&#x73B0;&#x7684;&#x73B0;&#x8C61;<br>&#x8FD0;&#x884C;&#xFF1A;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">roslaunch rbx1_bringup fake_turtlebot.launch</span><br><span class="line">rosrun rviz rviz <span class="_">-d</span> `rospack find rbx1_nav`/sim.rviz</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&#x770B;&#x5230;&#x7684;&#x662F;&#xFF1A;<br><img src="/2016/05/13/ROS-by-example/ar_roboct.png" alt="turtlebot"><br><img src="/2016/05/13/ROS-by-example/sim_rviz.png" alt="rviz"><br>&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x5E76;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x9884;&#x671F;&#x4F1A;&#x5B58;&#x5728;&#x7684;&#x673A;&#x5668;&#x4EBA;&#x3002;</p>
+<ul>
+<li>&#x5206;&#x6790;<br>&#x770B;&#x5230;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x4F7F;&#x7528;&#x4E86;rospack find&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x60F3;&#x5230;&#x5E94;&#x8BE5;&#x662F;&#x9700;&#x8981;source&#x624D;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x8FD0;&#x884C;&#x4E86;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/catkin_ws/devel/setup.bash</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&#x518D;&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x4E4B;&#x524D;&#x7684;&#x4E24;&#x6761;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x6B63;&#x786E;&#x7684;&#x8FD0;&#x884C;&#x3002;<br><img src="/2016/05/13/ROS-by-example/ar_roboct_true.png" alt="&#x5C0F;&#x9F9F;"><br><img src="/2016/05/13/ROS-by-example/trunaround_ar_rob.png" alt="&#x6E9C;&#x4E00;&#x4E0B;&#x5C0F;&#x9F9F;"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/13/ROS-by-example/" data-id="ciofbsuoz0000qwn3ekg666xr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/14/python-tips/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          python--小tips
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/05/10/python-handle-data/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">python对数据的预处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DataMining/">DataMining</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/ROS/">ROS</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Installation/">Installation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Installation/" style="font-size: 10px;">Installation</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/05/18/hello-world/">你好，Hexo！</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/14/python-tips/">python--小tips</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/13/ROS-by-example/">ROS_by_example</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/10/python-handle-data/">python对数据的预处理</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/03/ros-tutorial/">ros_tutorial</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 RiHui-Song<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/categories/Hexo" class="mobile-nav-link">Hexo</a>
+  
+    <a href="/categories/ROS" class="mobile-nav-link">ROS</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
