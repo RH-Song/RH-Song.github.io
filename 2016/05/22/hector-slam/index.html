@@ -5,16 +5,32 @@
   
   <title>hector_slam | RiHui-Song&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;">
+  <meta name="description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;
+
+A Flexible and Scalabel SLAM system with Full 3D Motion Estimation&amp;#x4E00;&amp;#x4E9B;&amp;#x5173;&amp;#x952E;&amp;#x8BCD;
+LIDAR: Light Detecting and Ranging &amp;#x6FC0;&amp;#x5149;&amp;#x96">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hector_slam">
 <meta property="og:url" content="http://yoursite.com/2016/05/22/hector-slam/index.html">
 <meta property="og:site_name" content="RiHui-Song's Blog">
-<meta property="og:description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;">
-<meta property="og:updated_time" content="2016-05-22T09:05:43.915Z">
+<meta property="og:description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;
+
+A Flexible and Scalabel SLAM system with Full 3D Motion Estimation&amp;#x4E00;&amp;#x4E9B;&amp;#x5173;&amp;#x952E;&amp;#x8BCD;
+LIDAR: Light Detecting and Ranging &amp;#x6FC0;&amp;#x5149;&amp;#x96">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/overview.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/navigation_fram.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/omiga.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/pi.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/vi.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/update_equation.png">
+<meta property="og:updated_time" content="2016-05-27T03:57:24.500Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hector_slam">
-<meta name="twitter:description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;">
+<meta name="twitter:description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;
+
+A Flexible and Scalabel SLAM system with Full 3D Motion Estimation&amp;#x4E00;&amp;#x4E9B;&amp;#x5173;&amp;#x952E;&amp;#x8BCD;
+LIDAR: Light Detecting and Ranging &amp;#x6FC0;&amp;#x5149;&amp;#x96">
+<meta name="twitter:image" content="http://yoursite.com/2016/05/22/hector-slam/overview.png">
   
     <link rel="alternate" href="/atom.xml" title="RiHui-Song&#39;s Blog" type="application/atom+xml">
   
@@ -95,10 +111,21 @@
       
         <h1 id="Hector-SLAM&#x7684;&#x6548;&#x679C;"><a href="#Hector-SLAM&#x7684;&#x6548;&#x679C;" class="headerlink" title="Hector SLAM&#x7684;&#x6548;&#x679C;"></a>Hector SLAM&#x7684;&#x6548;&#x679C;</h1><iframe height="498" width="510" src="http://player.youku.com/embed/XMTU3ODMxNTgxNg==" frameborder="0" allowfullscreen></iframe>
 
+<h1 id="A-Flexible-and-Scalabel-SLAM-system-with-Full-3D-Motion-Estimation"><a href="#A-Flexible-and-Scalabel-SLAM-system-with-Full-3D-Motion-Estimation" class="headerlink" title="A Flexible and Scalabel SLAM system with Full 3D Motion Estimation"></a>A Flexible and Scalabel SLAM system with Full 3D Motion Estimation</h1><h2 id="&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x8BCD;"><a href="#&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x8BCD;" class="headerlink" title="&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x8BCD;"></a>&#x4E00;&#x4E9B;&#x5173;&#x952E;&#x8BCD;</h2><ul>
+<li>LIDAR: Light Detecting and Ranging &#x6FC0;&#x5149;&#x96F7;&#x8FBE;</li>
+</ul>
+<h2 id="&#x6846;&#x67B6;"><a href="#&#x6846;&#x67B6;" class="headerlink" title="&#x6846;&#x67B6;"></a>&#x6846;&#x67B6;</h2><p><img src="/2016/05/22/hector-slam/overview.png" alt="Overview"></p>
+<p>Our approach combines a 2D SLAM system based on the integration of laser scans (LIDAR) in a planar map and an integrated 3D navigation system based on an inertial mea-surement unit (IMU), which incorporates the 2D informationfrom the SLAM subsystem as one possible source of aidinginformation.</p>
+<h2 id="navigation-frame"><a href="#navigation-frame" class="headerlink" title="navigation frame"></a>navigation frame</h2><p>Full 3D state represent by<br><img src="/2016/05/22/hector-slam/navigation_fram.png" alt="3D state"><br>where:<br><img src="/2016/05/22/hector-slam/omiga.png" alt=""><br><img src="/2016/05/22/hector-slam/pi.png" alt=""><br><img src="/2016/05/22/hector-slam/vi.png" alt=""></p>
+<p>The motion arbitrary rigid body is described by the nonlinear differential equation system:<br><img src="/2016/05/22/hector-slam/update_equation.png" alt=""></p>
+<h2 id="2D-SLAM"><a href="#2D-SLAM" class="headerlink" title="2D SLAM"></a>2D SLAM</h2><h3 id="Map-Access"><a href="#Map-Access" class="headerlink" title="Map Access"></a>Map Access</h3><h3 id="Scan-Matching"><a href="#Scan-Matching" class="headerlink" title="Scan Matching"></a>Scan Matching</h3><h3 id="Multi-Resolution-Map-Representation"><a href="#Multi-Resolution-Map-Representation" class="headerlink" title="Multi-Resolution Map Representation"></a>Multi-Resolution Map Representation</h3><blockquote>
+<p>&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x53C2;&#x8003;&#x81EA;<a href="http://www.sim.tu-darmstadt.de/publ/download/2011_SSRR_KohlbrecherMeyerStrykKlingauf_Flexible_SLAM_System.pdf" target="_blank" rel="external">A Flexible and Scalabel SLAM System with Full 3D Motion Estimation</a></p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/22/hector-slam/" data-id="cioid03lx0001zon3x52fuz0v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/22/hector-slam/" data-id="ciop77swm000bg4n3rcmi6ixs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hector-slam/">hector slam</a></li></ul>
@@ -108,6 +135,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/2016/05/27/a-story-of-hectorSLAM/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          从一个hector SLAM无法建图的bug开始说起
+        
+      </div>
+    </a>
   
   
     <a href="/2016/05/20/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
@@ -138,7 +174,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Installation/">Installation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hector-slam/">hector slam</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Installation/">Installation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hector-SLAM/">hector SLAM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hector-slam/">hector slam</a></li></ul>
     </div>
   </div>
 
@@ -148,7 +184,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Installation/" style="font-size: 10px;">Installation</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hector-slam/" style="font-size: 10px;">hector slam</a>
+      <a href="/tags/Installation/" style="font-size: 10px;">Installation</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/hector-SLAM/" style="font-size: 10px;">hector SLAM</a> <a href="/tags/hector-slam/" style="font-size: 10px;">hector slam</a>
     </div>
   </div>
 
@@ -170,6 +206,10 @@
       <ul>
         
           <li>
+            <a href="/2016/05/27/a-story-of-hectorSLAM/">从一个hector SLAM无法建图的bug开始说起</a>
+          </li>
+        
+          <li>
             <a href="/2016/05/22/hector-slam/">hector_slam</a>
           </li>
         
@@ -183,10 +223,6 @@
         
           <li>
             <a href="/2016/05/13/ROS-by-example/">ROS_by_example</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/10/python-handle-data/">python对数据的预处理</a>
           </li>
         
       </ul>
