@@ -23,7 +23,12 @@ LIDAR: Light Detecting and Ranging &amp;#x6FC0;&amp;#x5149;&amp;#x96">
 <meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/pi.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/vi.png">
 <meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/update_equation.png">
-<meta property="og:updated_time" content="2016-05-27T03:57:24.500Z">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/rt.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/dj.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/wc.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/em.png">
+<meta property="og:image" content="http://yoursite.com/2016/05/22/hector-slam/m.png">
+<meta property="og:updated_time" content="2016-05-27T06:28:57.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hector_slam">
 <meta name="twitter:description" content="Hector SLAM&amp;#x7684;&amp;#x6548;&amp;#x679C;
@@ -118,14 +123,19 @@ LIDAR: Light Detecting and Ranging &amp;#x6FC0;&amp;#x5149;&amp;#x96">
 <p>Our approach combines a 2D SLAM system based on the integration of laser scans (LIDAR) in a planar map and an integrated 3D navigation system based on an inertial mea-surement unit (IMU), which incorporates the 2D informationfrom the SLAM subsystem as one possible source of aidinginformation.</p>
 <h2 id="navigation-frame"><a href="#navigation-frame" class="headerlink" title="navigation frame"></a>navigation frame</h2><p>Full 3D state represent by<br><img src="/2016/05/22/hector-slam/navigation_fram.png" alt="3D state"><br>where:<br><img src="/2016/05/22/hector-slam/omiga.png" alt=""><br><img src="/2016/05/22/hector-slam/pi.png" alt=""><br><img src="/2016/05/22/hector-slam/vi.png" alt=""></p>
 <p>The motion arbitrary rigid body is described by the nonlinear differential equation system:<br><img src="/2016/05/22/hector-slam/update_equation.png" alt=""></p>
-<h2 id="2D-SLAM"><a href="#2D-SLAM" class="headerlink" title="2D SLAM"></a>2D SLAM</h2><h3 id="Map-Access"><a href="#Map-Access" class="headerlink" title="Map Access"></a>Map Access</h3><h3 id="Scan-Matching"><a href="#Scan-Matching" class="headerlink" title="Scan Matching"></a>Scan Matching</h3><h3 id="Multi-Resolution-Map-Representation"><a href="#Multi-Resolution-Map-Representation" class="headerlink" title="Multi-Resolution Map Representation"></a>Multi-Resolution Map Representation</h3><blockquote>
+<h2 id="2D-SLAM"><a href="#2D-SLAM" class="headerlink" title="2D SLAM"></a>2D SLAM</h2><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4ECE;LiDAR&#x83B7;&#x53D6;&#x73B0;&#x5B9E;&#x7684;&#x8FDE;&#x7EED;&#x4FE1;&#x53F7;&#xFF0C;&#x5BF9;&#x6B64;&#x53EF;&#x4EE5;&#x91C7;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x91C7;&#x6837;&#x7387;&#x8FDB;&#x884C;&#x91C7;&#x6837;&#xFF0C;&#x5F53;&#x7136;&#x4E0D;&#x540C;&#x7684;&#x91C7;&#x6837;&#x7387;&#x6700;&#x540E;&#x5F97;&#x5230;&#x7684;&#x56FE;&#x5F62;&#x7684;&#x7CBE;&#x5EA6;&#x4F1A;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;&#x5BF9;&#x4E8E;&#x91C7;&#x5230;&#x7684;&#x79BB;&#x6563;&#x6570;&#x636E;&#x70B9;&#x9635;&#xFF0C;&#x6211;&#x4EEC;&#x66F4;&#x4E3A;&#x5173;&#x6CE8;&#x672B;&#x7AEF;&#x70B9;&#x3002;&#x7136;&#x540E;&#x8FDB;&#x884C;&#x626B;&#x63CF;&#x5339;&#x914D;&#xFF0C;&#x5F97;&#x5230;&#x4F4D;&#x79FB;&#x548C;&#x504F;&#x8F6C;&#x7684;&#x589E;&#x91CF;&#x3002;&#x6700;&#x7EC8;&#x5F97;&#x5230;&#x5EFA;&#x56FE;&#x548C;&#x5B9A;&#x4F4D;&#x3002;</p>
+<h3 id="Map-Access"><a href="#Map-Access" class="headerlink" title="Map Access"></a>Map Access</h3><p>&#x79BB;&#x6563;&#x7684;&#x6805;&#x683C;&#x56FE;&#x7684;&#x6027;&#x8D28;&#x975E;&#x5E38;&#x5F71;&#x54CD;&#x7CBE;&#x5EA6;&#xFF0C;&#x6CA1;&#x529E;&#x6CD5;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x5185;&#x63D2;&#x503C;&#x4EE5;&#x53CA;&#x5FAE;&#x5206;&#x7684;&#x8BA1;&#x7B97;&#xFF0C;&#x8981;&#x8FDB;&#x884C;&#x53CC;&#x7EBF;&#x6027;&#x5185;&#x63D2;&#x503C;&#x3002;<br>&#x5BF9;&#x4E8E;&#x5177;&#x4F53;&#x7684;&#x5904;&#x7406;&#x65B9;&#x6CD5;&#x53C2;&#x8003;John&#x7684;&#x535A;&#x5BA2;&#xFF1A;<a href="http://m.blog.csdn.net/article/details?id=51512090" target="_blank" rel="external">&#x53CC;&#x7EBF;&#x6027;&#x63D2;&#x503C;</a></p>
+<h3 id="Scan-Matching"><a href="#Scan-Matching" class="headerlink" title="Scan Matching"></a>Scan Matching</h3><p>&#x626B;&#x63CF;&#x5339;&#x914D;&#x662F;&#x8FDB;&#x884C;&#x5728;aligning laser&#x4E4B;&#x95F4;&#x6216;&#x8005;&#x662F;&#x4E0E;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x56FE;&#x7247;&#x4E4B;&#x95F4;&#x7684;&#x3002;&#x8FD9;&#x91CC;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4ECE;&#x56FE;&#x4E2D;&#x6210;&#x675F;&#x7684;&#x672B;&#x7AEF;&#x70B9;&#x91CC;&#x627E;&#x5230;&#x7684;&#x6700;&#x4F18;&#x89E3;&#x3002;&#x7531;&#x4E8E;&#x662F;&#x5C06;&#x626B;&#x63CF;&#x7ED3;&#x679C;&#x4E0E;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x5730;&#x56FE;&#x8FDB;&#x884C;&#x5BF9;&#x9F50;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x610F;&#x5473;&#x7740;&#x6211;&#x4EEC;&#x9690;&#x5F0F;&#x5730;&#x4E0E;&#x6B64;&#x524D;&#x6240;&#x6709;&#x7684;&#x626B;&#x63CF;&#x7ED3;&#x679C;&#x505A;&#x5BF9;&#x6BD4;&#x3002;<br>&#x5177;&#x4F53;&#x7684;&#x6765;&#x8BF4;&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x8F6C;&#x5316;&#x91CF;<br><img src="/2016/05/22/hector-slam/rt.png" alt="rigid transformation"><br>&#x4F7F;&#x5F97;&#x4EE3;&#x4EF7;&#x51FD;&#x6570;<br><img src="/2016/05/22/hector-slam/dj.png" alt=""><br>&#x5F97;&#x5230;&#x6700;&#x5C0F;&#x503C;</p>
+<p>&#x6211;&#x4EEC;&#x53C8;&#x77E5;&#x9053;&#xFF0C;&#x673A;&#x5668;&#x4EBA;&#x7684;&#x5728;&#x5168;&#x5C40;&#x5750;&#x6807;&#x4E0B;&#x7684;&#x59FF;&#x6001;&#x8868;&#x793A;&#x4E3A;&#xFF1A;<br><img src="/2016/05/22/hector-slam/wc.png" alt="pose in world coordinate"><br>&#x5F97;&#x5230;&#x8BEF;&#x5DEE;&#x6D4B;&#x91CF;&#x8868;&#x793A;&#xFF0C;<br><img src="/2016/05/22/hector-slam/em.png" alt=""></p>
+<h3 id="Multi-Resolution-Map-Representation"><a href="#Multi-Resolution-Map-Representation" class="headerlink" title="Multi-Resolution Map Representation"></a>Multi-Resolution Map Representation</h3><p><img src="/2016/05/22/hector-slam/m.png" alt="multi-resolution"></p>
+<blockquote>
 <p>&#x6587;&#x4E2D;&#x5185;&#x5BB9;&#x53C2;&#x8003;&#x81EA;<a href="http://www.sim.tu-darmstadt.de/publ/download/2011_SSRR_KohlbrecherMeyerStrykKlingauf_Flexible_SLAM_System.pdf" target="_blank" rel="external">A Flexible and Scalabel SLAM System with Full 3D Motion Estimation</a></p>
 </blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/22/hector-slam/" data-id="ciop77swm000bg4n3rcmi6ixs" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/22/hector-slam/" data-id="ciopcm843000559n3g5wyqect" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hector-slam/">hector slam</a></li></ul>
