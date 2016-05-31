@@ -3,21 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>python对数据的预处理 | RiHui-Song&#39;s Blog</title>
+  <title>hector_slam源码 | RiHui-Song&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x8BFB;&amp;#x5165;
-with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;open file&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;with&amp;#x7ED3;&amp;#x675F;&amp;#">
+  <meta name="description" content="&amp;#x4ECE;&amp;#x6E90;&amp;#x7801;&amp;#x4E0A;&amp;#x89E3;&amp;#x8BFB;hector slam&amp;#x7684;&amp;#x67B6;&amp;#x6784;&amp;#x4E0E;&amp;#x539F;&amp;#x7406;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python对数据的预处理">
-<meta property="og:url" content="http://yoursite.com/2016/05/10/python-handle-data/index.html">
+<meta property="og:title" content="hector_slam源码">
+<meta property="og:url" content="http://yoursite.com/2016/06/01/hector-slam源码/index.html">
 <meta property="og:site_name" content="RiHui-Song's Blog">
-<meta property="og:description" content="&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x8BFB;&amp;#x5165;
-with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;open file&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;with&amp;#x7ED3;&amp;#x675F;&amp;#">
-<meta property="og:updated_time" content="2016-05-14T02:11:27.127Z">
+<meta property="og:description" content="&amp;#x4ECE;&amp;#x6E90;&amp;#x7801;&amp;#x4E0A;&amp;#x89E3;&amp;#x8BFB;hector slam&amp;#x7684;&amp;#x67B6;&amp;#x6784;&amp;#x4E0E;&amp;#x539F;&amp;#x7406;">
+<meta property="og:updated_time" content="2016-05-31T17:58:44.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python对数据的预处理">
-<meta name="twitter:description" content="&amp;#x6570;&amp;#x636E;&amp;#x7684;&amp;#x8BFB;&amp;#x5165;
-with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#xFF0C;&amp;#x53EF;&amp;#x4EE5;&amp;#x5728;open file&amp;#x4E4B;&amp;#x540E;&amp;#xFF0C;with&amp;#x7ED3;&amp;#x675F;&amp;#">
+<meta name="twitter:title" content="hector_slam源码">
+<meta name="twitter:description" content="&amp;#x4ECE;&amp;#x6E90;&amp;#x7801;&amp;#x4E0A;&amp;#x89E3;&amp;#x8BFB;hector slam&amp;#x7684;&amp;#x67B6;&amp;#x6784;&amp;#x4E0E;&amp;#x539F;&amp;#x7406;">
   
     <link rel="alternate" href="/atom.xml" title="RiHui-Song&#39;s Blog" type="application/atom+xml">
   
@@ -70,14 +67,14 @@ with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-python-handle-data" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hector-slam源码" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/10/python-handle-data/" class="article-date">
-  <time datetime="2016-05-10T01:38:13.000Z" itemprop="datePublished">2016-05-10</time>
+    <a href="/2016/06/01/hector-slam源码/" class="article-date">
+  <time datetime="2016-05-31T17:54:33.000Z" itemprop="datePublished">2016-06-01</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/DataMining/">DataMining</a>
+    <a class="article-category-link" href="/categories/ROS/">ROS</a>
   </div>
 
   </div>
@@ -88,7 +85,7 @@ with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;
         
   
     <h1 class="article-title" itemprop="name">
-      python对数据的预处理
+      hector_slam源码
     </h1>
   
 
@@ -96,24 +93,15 @@ with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5165;"><a href="#&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5165;" class="headerlink" title="&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5165;"></a>&#x6570;&#x636E;&#x7684;&#x8BFB;&#x5165;</h1><ul>
-<li>with&#x5173;&#x952E;&#x5B57;<br>&#x4F7F;&#x7528;with&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;open file&#x4E4B;&#x540E;&#xFF0C;with&#x7ED3;&#x675F;&#x65F6;&#x6587;&#x4EF6;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x518D;&#x4F7F;&#x7528;close&#x3002;&#x662F;&#x4E00;&#x4E2A;&#x4E0D;&#x9519;&#x7684;&#x9009;&#x62E9;&#x3002;</li>
-<li>numpy&#x6570;&#x7EC4;<br>&#x53EF;&#x4EE5;&#x8BFB;&#x5165;&#x5230;numpy&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#x3002;&#x5982;&#x679C;&#x5BF9;&#x4E8E;&#x8BFB;&#x5165;&#x7684;&#x6570;&#x636E;&#x7684;&#x5F62;&#x6001;&#x4E0D;&#x591F;&#x6EE1;&#x610F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;reshape&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = numpy.loadtxt(<span class="string">&apos;filename.txt&apos;</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">b = numpy.reshape(a,(&#x5E0C;&#x671B;&#x7684;&#x5F62;&#x6001;))</span><br><span class="line">b = numpy.reshape(a,(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
-<ul>
-<li>&#x5B58;&#x5165;list<br>&#x53EA;&#x662F;&#x8BFB;&#x51FA;&#x6765;&#xFF0C;&#x5E76;&#x5B58;&#x5165;&#x4E00;&#x4E2A;list&#x3002;<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">&apos;training.txt&apos;</span>,<span class="string">&apos;r&apos;</span>) <span class="keyword">as</span> f:</span><br><span class="line">	data = f.readlines()</span><br><span class="line">	<span class="keyword">for</span> line <span class="keyword">in</span> data:</span><br><span class="line">		odom = line.split()</span><br><span class="line"><span class="comment"># change data into float</span></span><br><span class="line">		numbers_float = map(float, odom)</span><br><span class="line">		<span class="keyword">print</span> numbers_float</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+        <p>&#x4ECE;&#x6E90;&#x7801;&#x4E0A;&#x89E3;&#x8BFB;hector slam&#x7684;&#x67B6;&#x6784;&#x4E0E;&#x539F;&#x7406;</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/10/python-handle-data/" data-id="ciovr0lhf000pcwk2kq55bwwk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/06/01/hector-slam源码/" data-id="ciovr0le70001cwk2a6f8vh0j" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hector-SLAM/">hector SLAM</a></li></ul>
 
     </footer>
   </div>
@@ -121,19 +109,10 @@ with&amp;#x5173;&amp;#x952E;&amp;#x5B57;&amp;#x4F7F;&amp;#x7528;with&amp;#x5173;
     
 <nav id="article-nav">
   
-    <a href="/2016/05/13/ROS-by-example/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ROS_by_example
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/05/03/ros-tutorial/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/27/a-story-of-hectorSLAM/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">ros_tutorial</div>
+      <div class="article-nav-title">从一个hector SLAM无法建图的bug开始说起</div>
     </a>
   
 </nav>
