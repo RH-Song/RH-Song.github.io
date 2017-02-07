@@ -1,0 +1,664 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mount，disk," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Ubuntu&amp;#x4E0B;&amp;#x78C1;&amp;#x76D8;&amp;#x6302;&amp;#x8F7D;&amp;#x548C;&amp;#x67E5;&amp;#x770B;&amp;#x5F53;&amp;#x65B0;&amp;#x4ECB;&amp;#x5165;&amp;#x4E00;&amp;#x4E2A;&amp;#x78C1;&amp;#x76D8;&amp;#x6216;&amp;#x8005;&amp;#x79FB;&amp;#x52A8;&amp;#x786C;&amp;#x76D8;&amp;#x4E4B;&amp;#x540E;&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu下磁盘挂载和查看">
+<meta property="og:url" content="http://yoursite.com/2016/02/07/mount-disk/index.html">
+<meta property="og:site_name" content="RiHui-Song's Blog">
+<meta property="og:description" content="Ubuntu&amp;#x4E0B;&amp;#x78C1;&amp;#x76D8;&amp;#x6302;&amp;#x8F7D;&amp;#x548C;&amp;#x67E5;&amp;#x770B;&amp;#x5F53;&amp;#x65B0;&amp;#x4ECB;&amp;#x5165;&amp;#x4E00;&amp;#x4E2A;&amp;#x78C1;&amp;#x76D8;&amp;#x6216;&amp;#x8005;&amp;#x79FB;&amp;#x52A8;&amp;#x786C;&amp;#x76D8;&amp;#x4E4B;&amp;#x540E;&amp;#">
+<meta property="og:image" content="http://yoursite.com/2016/02/07/mount-disk/mymv.png">
+<meta property="og:image" content="http://yoursite.com/2016/02/07/mount-disk/mvpath.png">
+<meta property="og:updated_time" content="2017-02-07T03:07:10.967Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu下磁盘挂载和查看">
+<meta name="twitter:description" content="Ubuntu&amp;#x4E0B;&amp;#x78C1;&amp;#x76D8;&amp;#x6302;&amp;#x8F7D;&amp;#x548C;&amp;#x67E5;&amp;#x770B;&amp;#x5F53;&amp;#x65B0;&amp;#x4ECB;&amp;#x5165;&amp;#x4E00;&amp;#x4E2A;&amp;#x78C1;&amp;#x76D8;&amp;#x6216;&amp;#x8005;&amp;#x79FB;&amp;#x52A8;&amp;#x786C;&amp;#x76D8;&amp;#x4E4B;&amp;#x540E;&amp;#">
+<meta name="twitter:image" content="http://yoursite.com/2016/02/07/mount-disk/mymv.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/02/07/mount-disk/"/>
+
+  <title> Ubuntu下磁盘挂载和查看 | RiHui-Song's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c97bce939065fd18febbf66a9c21abc7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">RiHui-Song's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Ubuntu下磁盘挂载和查看
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-07T11:01:34+08:00" content="2016-02-07">
+              2016-02-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/07/mount-disk/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/02/07/mount-disk/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Ubuntu&#x4E0B;&#x78C1;&#x76D8;&#x6302;&#x8F7D;&#x548C;&#x67E5;&#x770B;"><a href="#Ubuntu&#x4E0B;&#x78C1;&#x76D8;&#x6302;&#x8F7D;&#x548C;&#x67E5;&#x770B;" class="headerlink" title="Ubuntu&#x4E0B;&#x78C1;&#x76D8;&#x6302;&#x8F7D;&#x548C;&#x67E5;&#x770B;"></a>Ubuntu&#x4E0B;&#x78C1;&#x76D8;&#x6302;&#x8F7D;&#x548C;&#x67E5;&#x770B;</h2><p>&#x5F53;&#x65B0;&#x4ECB;&#x5165;&#x4E00;&#x4E2A;&#x78C1;&#x76D8;&#x6216;&#x8005;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x4E4B;&#x540E;&#xFF0C;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x547D;&#x4EE4;&#x884C;&#x8FDB;&#x884C;&#x67E5;&#x770B;&#x3002;<br><a id="more"></a></p>
+<h2 id="&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7684;&#x4F7F;&#x7528;"><a href="#&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7684;&#x4F7F;&#x7528;" class="headerlink" title="&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7684;&#x4F7F;&#x7528;"></a>&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7684;&#x4F7F;&#x7528;</h2><p>&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x5728;Ubuntu&#x4E0B;&#x662F;&#x6CA1;&#x6709;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x4E8E;windows&#x4E00;&#x6837;&#x7684;&#x56FE;&#x6807;&#xFF0C;&#x70B9;&#x51FB;&#x5373;&#x53EF;&#x8FDB;&#x5165;&#xFF0C;&#x90A3;&#x5E94;&#x5F53;&#x5982;&#x4F55;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x67E5;&#x770B;&#x5462;&#xFF1F;&#x6216;&#x8005;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;&#x7136;&#x540E;&#x8BBF;&#x95EE;&#x5462;&#xFF1F;&#x6216;&#x8005;&#x8BA9;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x7684;&#x5185;&#x5BB9;&#x51FA;&#x73B0;&#x5728;&#x5408;&#x9002;&#x7684;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x5462;&#xFF1F;</p>
+<h3 id="&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;"><a href="#&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;" class="headerlink" title="&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;"></a>&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</h3><ul>
+<li>sudo fdisk -l:&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x78C1;&#x76D8;&#xFF0C;&#x6839;&#x636E;&#x5927;&#x5C0F;&#x548C;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x63A8;&#x6D4B;&#x51FA;&#x54EA;&#x4E00;&#x4E2A;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x79FB;&#x52A8;&#x786C;&#x76D8;<br><img src="/2016/02/07/mount-disk/mymv.png" alt="&#x67E5;&#x770B;&#x8BBE;&#x5907;"></li>
+<li>mount:&#x67E5;&#x770B;&#x6302;&#x8F7D;&#x7684;&#x8BBE;&#x5907;&#x3002;&#x5F53;&#x7136;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x662F;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x6302;&#x8F7D;&#x3002;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x6302;&#x8F7D;&#x662F;&#x88AB;&#x6302;&#x8F7D;&#x5230;&#x54EA;&#x4E2A;&#x8DEF;&#x5F84;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x6B64;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x3002;<br><img src="/2016/02/07/mount-disk/mvpath.png" alt="&#x67E5;&#x770B;&#x6302;&#x8F7D;&#x60C5;&#x51B5;"><br>&#x6B64;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x518D;&#x8FDB;&#x884C;&#x6302;&#x8F7D;&#x6216;&#x8005;&#x65AD;&#x5F00;&#x6302;&#x8F7D;&#xFF1A;<br>&#x5047;&#x8BBE;&#x79FB;&#x52A8;&#x786C;&#x76D8;&#x662F;&#xFF1A;/dev/sdc &#x671F;&#x5F85;&#x7684;&#x6302;&#x8F7D;&#x70B9;&#xFF1A;/mnt/mvdisk<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mount /dev/sdc /mnt/mvdisk (&#x6302;&#x8F7D;)</span><br><span class="line">$ sudo umount /mnt/mvdisk (&#x65AD;&#x5F00;&#x6302;&#x8F7D;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mount，disk/" rel="tag">#mount，disk</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/02/07/update-error/" rel="next" title="解决Ubuntu update时候遇到的错误">
+                <i class="fa fa-chevron-left"></i> 解决Ubuntu update时候遇到的错误
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/03/ROS-install-indigo/" rel="prev" title="安装ROS Indigo">
+                安装ROS Indigo <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/02/07/mount-disk/"
+           data-title="Ubuntu下磁盘挂载和查看" data-url="http://yoursite.com/2016/02/07/mount-disk/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/0715_2.jpg"
+               alt="RiHui-Song" />
+          <p class="site-author-name" itemprop="name">RiHui-Song</p>
+          <p class="site-description motion-element" itemprop="description">Never let it rest, until your good is better and your better is best.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rh-song" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu下磁盘挂载和查看"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu下磁盘挂载和查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动硬盘的使用"><span class="nav-number">2.</span> <span class="nav-text">移动硬盘的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤如下："><span class="nav-number">2.1.</span> <span class="nav-text">步骤如下：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RiHui-Song</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rhgithubblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
