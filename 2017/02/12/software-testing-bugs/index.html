@@ -1,0 +1,694 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;&amp;#x672C;&amp;#x6587;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x6709;&amp;#x5173;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7F3A;&amp;#x9677;&amp;#x7684;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF0C;&amp;#x662F;&amp;#x8F6F;&amp;#x4EF6;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x7B2C;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试——软件缺陷">
+<meta property="og:url" content="http://yoursite.com/2017/02/12/software-testing-bugs/index.html">
+<meta property="og:site_name" content="RiHui-Song's Blog">
+<meta property="og:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;&amp;#x672C;&amp;#x6587;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x6709;&amp;#x5173;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7F3A;&amp;#x9677;&amp;#x7684;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF0C;&amp;#x662F;&amp;#x8F6F;&amp;#x4EF6;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x7B2C;">
+<meta property="og:updated_time" content="2017-02-12T13:13:09.853Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件测试——软件缺陷">
+<meta name="twitter:description" content="&amp;#x6458;&amp;#x8981;&amp;#xFF1A;&amp;#x672C;&amp;#x6587;&amp;#x4E3B;&amp;#x8981;&amp;#x8BB2;&amp;#x6709;&amp;#x5173;&amp;#x8F6F;&amp;#x4EF6;&amp;#x7F3A;&amp;#x9677;&amp;#x7684;&amp;#x77E5;&amp;#x8BC6;&amp;#xFF0C;&amp;#x662F;&amp;#x8F6F;&amp;#x4EF6;&amp;#x6D4B;&amp;#x8BD5;&amp;#x7684;&amp;#x7B2C;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/12/software-testing-bugs/"/>
+
+  <title> 软件测试——软件缺陷 | RiHui-Song's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?c97bce939065fd18febbf66a9c21abc7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">RiHui-Song's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                软件测试——软件缺陷
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-02-12T20:44:18+08:00" content="2017-02-12">
+              2017-02-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Software-Testing/" itemprop="url" rel="index">
+                    <span itemprop="name">Software Testing</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/02/12/software-testing-bugs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/12/software-testing-bugs/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>&#x6458;&#x8981;&#xFF1A;<br>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x8BB2;&#x6709;&#x5173;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7684;&#x77E5;&#x8BC6;&#xFF0C;&#x662F;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x7684;&#x7B2C;&#x4E00;&#x7BC7;&#x3002;</p>
+<a id="more"></a>
+<h2 id="&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x662F;&#x4EC0;&#x4E48;"><a href="#&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x662F;&#x4EC0;&#x4E48;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x662F;&#x4EC0;&#x4E48;"></a>&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x662F;&#x4EC0;&#x4E48;</h2><hr>
+<p>&#x6709;&#x8BB8;&#x591A;&#x4E0D;&#x540C;&#x7684;&#x8F6F;&#x4EF6;&#x5931;&#x8D25;&#x7684;&#x672F;&#x8BED;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x6559;&#x6750;&#x53EF;&#x80FD;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53EB;&#x6CD5;&#xFF0C;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x4E5F;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53EB;&#x6CD5;&#x3002;&#x4ED6;&#x4EEC;&#x5927;&#x81F4;&#x6709;&#x4E0B;&#x9762;&#x8FD9;&#x4E09;&#x7C7B;&#xFF0C;&#x4EE3;&#x8868;&#x7740;&#x4E0D;&#x540C;&#x7A0B;&#x5EA6;&#x7684;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x3002;</p>
+<ul>
+<li>&#x6545;&#x969C;&#x3001;&#x5931;&#x8D25;&#x3001;&#x7F3A;&#x70B9;</li>
+<li>&#x5F02;&#x5E38;&#x3001;&#x4E8B;&#x4EF6;&#x3001;&#x504F;&#x5DEE;</li>
+<li>&#x95EE;&#x9898;&#x3001;&#x9519;&#x8BEF;&#x3001;&#x7F3A;&#x9677;</li>
+</ul>
+<h2 id="&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7684;&#x5B98;&#x65B9;&#x5B9A;&#x4E49;"><a href="#&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7684;&#x5B98;&#x65B9;&#x5B9A;&#x4E49;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7684;&#x5B98;&#x65B9;&#x5B9A;&#x4E49;"></a>&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7684;&#x5B98;&#x65B9;&#x5B9A;&#x4E49;</h2><hr>
+<p>&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x5176;&#x5B9E;&#x4E0D;&#x5BB9;&#x6613;&#x6709;&#x7CBE;&#x51C6;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x8FD8;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x5FAA;&#x73AF;&#x5B9A;&#x4E49;&#x3002;&#x4E0B;&#x9762;&#x7ED9;&#x51FA;5&#x6761;&#x5177;&#x4F53;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x907F;&#x514D;&#x4EA7;&#x751F;&#x5FAA;&#x73AF;&#x5B9A;&#x4E49;&#x3002;</p>
+<ul>
+<li>&#x8F6F;&#x4EF6;&#x672A;&#x5B9E;&#x73B0;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x8981;&#x6C42;&#x7684;&#x529F;&#x80FD;</li>
+<li>&#x8F6F;&#x4EF6;&#x51FA;&#x73B0;&#x4E86;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x6307;&#x660E;&#x4E0D;&#x5E94;&#x8BE5;&#x51FA;&#x73B0;&#x7684;&#x9519;&#x8BEF;</li>
+<li>&#x8F6F;&#x4EF6;&#x5B9E;&#x73B0;&#x4E86;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x672A;&#x63D0;&#x5230;&#x7684;&#x529F;&#x80FD;</li>
+<li>&#x8F6F;&#x4EF6;&#x672A;&#x5B9E;&#x73B0;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x867D;&#x672A;&#x660E;&#x786E;&#x63D0;&#x53CA;&#x4F46;&#x5E94;&#x8BE5;&#x5B9E;&#x73B0;&#x7684;&#x76EE;&#x6807;</li>
+<li>&#x8F6F;&#x4EF6;&#x96BE;&#x4EE5;&#x7406;&#x89E3;&#x3001;&#x4E0D;&#x6613;&#x4F7F;&#x7528;&#x3001;&#x8FD0;&#x884C;&#x7F13;&#x6162;&#x6216;&#x8005;&#x2014;&#x2014;&#x4ECE;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x89D2;&#x5EA6;&#x770B;&#x2014;&#x2014;&#x6700;&#x7EC8;&#x7528;&#x6237;&#x4F1A;&#x8BA4;&#x4E3A;&#x4E0D;&#x597D;<br>&#x4EE5;&#x4E0A;&#x90FD;&#x53EF;&#x4EE5;&#x79F0;&#x4E4B;&#x4E3A;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#xFF0C;&#x5C24;&#x5176;&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7B2C;&#x4E09;&#x6761;&#xFF0C;&#x4E0D;&#x8981;&#x4EE5;&#x4E3A;&#x5B9E;&#x73B0;&#x4E86;&#x66F4;&#x591A;&#x7684;&#x529F;&#x80FD;&#x5C31;&#x662F;&#x597D;&#x7684;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x4F46;&#x662F;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x6CA1;&#x6709;&#x63D0;&#x5230;&#x5C31;&#x662F;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x51FA;&#x73B0;&#x4E00;&#x4E9B;&#x7528;&#x6237;&#x610F;&#x60F3;&#x4E0D;&#x5230;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x662F;&#x4E0D;&#x5141;&#x8BB8;&#x7684;&#x3002;</li>
+</ul>
+<h2 id="&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x539F;&#x56E0;"><a href="#&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x539F;&#x56E0;" class="headerlink" title="&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x539F;&#x56E0;"></a>&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x539F;&#x56E0;</h2><hr>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4E94;&#x6761;&#x5B9A;&#x4E49;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#xFF0C;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x80AF;&#x5B9A;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;&#x5173;&#x952E;&#x70B9;&#xFF0C;&#x786E;&#x5B9E;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#x7684;&#x3002;</p>
+<ul>
+<li>&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x6700;&#x5927;&#x7684;&#x539F;&#x56E0;&#x662F;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;</li>
+<li>&#x5BFC;&#x81F4;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x7B2C;&#x4E8C;&#x5927;&#x539F;&#x56E0;&#x6765;&#x6E90;&#x662F;&#x8BBE;&#x8BA1;</li>
+<li>&#x65E0;&#x8BBA;&#x662F;&#x4EA7;&#x54C1;&#x8BF4;&#x660E;&#x4E66;&#x8FD8;&#x662F;&#x8BBE;&#x8BA1;&#xFF0C;&#x90FD;&#x6709;&#x6613;&#x53D8;&#x7684;&#x7279;&#x70B9;&#xFF0C;&#x52A0;&#x4E0A;&#x968F;&#x610F;&#x7684;&#x6001;&#x5EA6;&#xFF0C;&#x4E00;&#x65E6;&#x6C9F;&#x901A;&#x4E0D;&#x8DB3;&#x5C31;&#x6784;&#x6210;&#x4E86;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x3002;</li>
+</ul>
+<h2 id="&#x4FEE;&#x590D;&#x8D39;&#x7528;"><a href="#&#x4FEE;&#x590D;&#x8D39;&#x7528;" class="headerlink" title="&#x4FEE;&#x590D;&#x8D39;&#x7528;"></a>&#x4FEE;&#x590D;&#x8D39;&#x7528;</h2><hr>
+<p>&#x60F3;&#x8981;&#x4FEE;&#x590D;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;&#x662F;&#x6709;&#x8D39;&#x7528;&#x7684;&#xFF0C;&#x4FEE;&#x590D;&#x8D39;&#x7528;&#x4E5F;&#x6709;&#x4E00;&#x4E2A;&#x7279;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x968F;&#x7740;&#x65F6;&#x95F4;&#x63A8;&#x79FB;&#xFF0C;&#x8D39;&#x7528;&#x5448;&#x5341;&#x500D;&#x589E;&#x957F;<br>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6765;&#x770B;&#x51E0;&#x4E2A;&#x4F8B;&#x5B50;&#xFF1A;<ul>
+<li>&#x8FEA;&#x65AF;&#x5C3C;&#x7684;&#x72EE;&#x5B50;&#x738B;&#xFF1A;&#x8FD9;&#x662F;&#x8FEA;&#x65AF;&#x5C3C;&#x53D1;&#x5E03;&#x7684;&#x4E00;&#x6B3E;&#x6E38;&#x620F;&#xFF0C;&#x8FD9;&#x6B3E;&#x6E38;&#x620F;&#x53D1;&#x5E03;&#x4E4B;&#x540E;&#x5927;&#x53D7;&#x6B22;&#x8FCE;&#xFF0C;&#x4F46;&#x662F;&#x8FEA;&#x65AF;&#x5C3C;&#x672A;&#x80FD;&#x5BF9;&#x4E0D;&#x540C;&#x7C7B;&#x578B;pc&#x673A;&#x578B;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x7ED3;&#x679C;&#x5BFC;&#x81F4;&#x5F88;&#x591A;&#x673A;&#x578B;&#x65E0;&#x6CD5;&#x6B63;&#x786E;&#x5B89;&#x88C5;&#x6E38;&#x620F;&#xFF0C;&#x8FD9;&#x4E0D;&#x4EC5;&#x4EC5;&#x9020;&#x6210;&#x5927;&#x91CF;&#x552E;&#x540E;&#x95EE;&#x9898;&#xFF0C;&#x8FD8;&#x6D41;&#x5931;&#x7528;&#x6237;&#xFF0C;&#x635F;&#x5931;&#x60E8;&#x91CD;&#x3002;&#x5982;&#x679C;&#x80FD;&#x5728;&#x65E9;&#x671F;&#x5BF9;&#x4E0D;&#x540C;&#x7684;pc&#x673A;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x907F;&#x514D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x90A3;&#x8FD9;&#x5C06;&#x662F;&#x4E00;&#x6B3E;&#x975E;&#x5E38;&#x6210;&#x529F;&#x7684;&#x6E38;&#x620F;&#x3002;</li>
+<li>&#x5954;&#x817E;&#x7684;&#x6D6E;&#x70B9;&#x6570;&#x7F3A;&#x9677;&#xFF1A;&#x8FD9;&#x6B21;&#x7F3A;&#x9677;&#x5BFC;&#x81F4;&#x7684;&#x53EC;&#x56DE;&#x635F;&#x5931;&#x5927;&#x5BB6;&#x6709;&#x76EE;&#x5171;&#x7779;&#x3002;&#x5176;&#x5B9E;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x5728;&#x6D4B;&#x8BD5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5DE5;&#x7A0B;&#x5E08;&#x5DF2;&#x53D1;&#x73B0;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#x60F3;&#x5230;&#x5927;&#x90E8;&#x5206;&#x7528;&#x6237;&#x7684;&#x65E5;&#x5E38;&#x4F7F;&#x7528;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#xFF0C;&#x4FBF;&#x5FFD;&#x7565;&#x4E86;&#x8FD9;&#x4E2A;&#x7F3A;&#x9677;&#xFF0C;&#x4E0D;&#x89E3;&#x51B3;&#xFF0C;&#x7ED3;&#x679C;&#x917F;&#x6210;&#x60B2;&#x5267;&#x3002;<br>&#x4EE5;&#x4E0A;&#x7684;&#x4F8B;&#x5B50;&#x90FD;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x7684;&#x91CD;&#x8981;&#x6027;&#xFF0C;&#x5C3D;&#x65E9;&#x53D1;&#x73B0;&#x5E76;&#x89E3;&#x51B3;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x4FEE;&#x590D;&#x6210;&#x672C;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x5DE5;&#x4F5C;"><a href="#&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x5DE5;&#x4F5C;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x5DE5;&#x4F5C;"></a>&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x5DE5;&#x4F5C;</h2><hr>
+<p>&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x7684;&#x5DE5;&#x4F5C;&#x5927;&#x81F4;&#x6709;&#x4E24;&#x4E2A;&#x8981;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x53D1;&#x73B0;&#x8F6F;&#x4EF6;&#x7F3A;&#x9677;</li>
+<li>&#x5E76;&#x4E14;&#x8981;&#x5C3D;&#x53EF;&#x80FD;&#x5FEB;&#x7684;&#x627E;&#x51FA;</li>
+</ul>
+<h2 id="&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x7684;&#x54C1;&#x8D28;"><a href="#&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x7684;&#x54C1;&#x8D28;" class="headerlink" title="&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x7684;&#x54C1;&#x8D28;"></a>&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x5E94;&#x8BE5;&#x5177;&#x5907;&#x7684;&#x54C1;&#x8D28;</h2><hr>
+<p>&#x4E00;&#x4E2A;&#x4F18;&#x79C0;&#x7684;&#x8F6F;&#x4EF6;&#x6D4B;&#x8BD5;&#x5458;&#x5E94;&#x5F53;&#x6709;&#x4EE5;&#x4E0B;&#x7684;&#x54C1;&#x8D28;&#xFF1A;</p>
+<ul>
+<li>&#x5E94;&#x8BE5;&#x662F;&#x63A2;&#x7D22;&#x8005;&#x3001;&#x6545;&#x969C;&#x6392;&#x9664;&#x5458;</li>
+<li>&#x4E0D;&#x4F1A;&#x653E;&#x8FC7;&#x4EFB;&#x4F55;&#x86DB;&#x4E1D;&#x9A6C;&#x8FF9;</li>
+<li>&#x5177;&#x6709;&#x521B;&#x9020;&#x6027;&#x3001;&#x8FFD;&#x6C42;&#x5B8C;&#x7F8E;</li>
+<li>&#x5224;&#x65AD;&#x51C6;&#x786E;</li>
+<li>&#x6CE8;&#x91CD;&#x7B56;&#x7565;&#x548C;&#x5916;&#x4EA4;&#xFF1A;&#x5982;&#x4F55;&#x548C;&#x7A0B;&#x5E8F;&#x5458;&#x6C9F;&#x901A;</li>
+<li>&#x5584;&#x4E8E;&#x8BF4;&#x670D;</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/11/cmake-practise1/" rel="next" title="CMake实践">
+                <i class="fa fa-chevron-left"></i> CMake实践
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/12/software-testing-bugs/"
+           data-title="软件测试——软件缺陷" data-url="http://yoursite.com/2017/02/12/software-testing-bugs/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/0715_2.jpg"
+               alt="RiHui-Song" />
+          <p class="site-author-name" itemprop="name">RiHui-Song</p>
+          <p class="site-description motion-element" itemprop="description">Never let it rest, until your good is better and your better is best.</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/rh-song" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件缺陷是什么"><span class="nav-number">1.</span> <span class="nav-text">软件缺陷是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件缺陷的官方定义"><span class="nav-number">2.</span> <span class="nav-text">软件缺陷的官方定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导致软件缺陷原因"><span class="nav-number">3.</span> <span class="nav-text">导致软件缺陷原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修复费用"><span class="nav-number">4.</span> <span class="nav-text">修复费用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试员的工作"><span class="nav-number">5.</span> <span class="nav-text">软件测试员的工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试员应该具备的品质"><span class="nav-number">6.</span> <span class="nav-text">软件测试员应该具备的品质</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">RiHui-Song</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"rhgithubblog"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
